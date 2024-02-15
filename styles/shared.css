@@ -1,0 +1,117 @@
+:root {
+    /* COLORS */
+    --clr-light-gray: #3a4750;
+    --clr-dark-gray: #303841;
+    --clr-primary: #2185d5;
+    --clr-papaya-whip: #fdf0d5;
+    --clr-ash-gray: #c6d8d3;
+
+    /* FONT SIZES */
+    --fs-small: clamp(1rem, 0.25vw + 0.25rem, 1.3rem);
+    --fs-normal: clamp(1.5rem, 0.7vw + 0.55rem, 1.7rem);
+    --fs-medium: clamp(1.8rem, 0.5vw + 0.5rem, 2.2rem);
+    --fs-large: clamp(2.5rem, 4vw + 1.5rem, 3.4rem);
+    --fs-very-large: clamp(3.5rem, 7vw + 1.5rem, 7rem);
+
+    /* SPACING */
+    --inline-spacing: clamp(3rem, 4vw + 1.5rem, 10rem);
+    --block-spacing: clamp(4rem, 5vw + 2rem, 7rem);
+    --elem-spacing: clamp(2.5rem, 2vw + 0.75rem, 8rem);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+
+html {
+    color-scheme: dark light;
+    font-size: 62.5%;
+    font-family: 'Baloo Bhaijaan 2';
+}
+
+body {
+    min-height: 100dvh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-style: italic;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance;
+    direction: rtl;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    text-wrap: pretty;
+    max-width: 70ch;
+    direction: rtl;
+}
+
+@media (prefers-reduced-motion: no-prefrence) {
+    :has(:target) {
+        scroll-behavior: smooth;
+    }
+}
+
+.navbar {
+    --links-padding: clamp(1.35em, 2.5vw + 2em, 3rem);
+    --nav-height: clamp(3rem, 5vw + 2rem, 9rem);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: var(--fs-medium);
+    background-color: var(--clr-primary);
+    height: var(--nav-height);
+    padding-inline: var(--inline-spacing);
+    overflow: hidden;
+
+    ul {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        font-weight: 500;
+    }
+
+    a:link,
+    a:visited {
+        position: relative;
+        height: var(--nav-height);
+        display: flex;
+        align-items: center;
+        padding-inline: var(--links-padding);
+        color: white;
+        transition: background-color 0.2s linear;
+    }
+    a:hover {
+        background-color: #145f9c;
+    }
+}
